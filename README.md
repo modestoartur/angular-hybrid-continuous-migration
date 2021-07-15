@@ -1,6 +1,34 @@
-# AngularAndAngularjs
+# Angular Continuous Migration from AngularJS to Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Migrating large enterprise angular js codebases to angular
+
+# Why migrate?
+
+- Injection Dependency
+- Change Detection
+- Dependecy Injection
+- Module System
+- Angular CLI
+
+# How migrate?
+
+## 1st - Prepare
+
+- Follow the upgrade guide that can help us in the way
+- Prepare component-based archtecture what can be a little hard when we have alot of hierarchical $scopes
+
+## 2nd - Go Hybrid
+
+- Buttom Up - Not the best one, still possible.
+- Top Down - Mostly used
+
+## 3th - Continuous Migration
+
+- 1st with routes
+- 2nd with services
+- 3th with component
+
+# Help
 
 ## Development server
 

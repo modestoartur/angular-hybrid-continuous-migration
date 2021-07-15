@@ -1,18 +1,23 @@
+import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { setAngularJSGlobal, UpgradeModule } from '@angular/upgrade/static'; // Set angular globally -> https://stackoverflow.com/a/45970772
+import * as angular from './../angularjs-sample-app/app/lib/angular'; // Import angular from angularjs -> https://stackoverflow.com/a/45970772
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+setAngularJSGlobal(angular);1st
 
+const ngApp = angular.module('myApp', []);
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, UpgradeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]  We disabled that to bootstrap manuaaly
+  entryComponents: [AppComponent], // Add entryComponents to bootstrap manuaaly
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private upgrade: UpgradeModule) {}
+  ngDoBootstrap(app: ApplicationRef) {
+    this.upgrade.bootstrap(document.body, [ngApp.name]); // 4th -> Use the UpgradeModule to get AngularJS
+    app.bootstrap(AppComponent); // Bootstrap the app
+  }
+}
