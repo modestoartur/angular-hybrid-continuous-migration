@@ -1,5 +1,7 @@
 # Angular Continuous Migration from AngularJS to Angular
 
+<img src="/poc.png" alt="hybrid-angular" />
+
 Migrating large enterprise angular js codebases to angular
 
 # Why migrate?
