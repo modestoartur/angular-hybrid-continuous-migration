@@ -1,10 +1,10 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { setAngularJSGlobal, UpgradeModule } from '@angular/upgrade/static'; // Set angular globally -> https://stackoverflow.com/a/45970772
-import * as angular from './../angularjs-sample-app/app/lib/angular'; // Import angular from angularjs -> https://stackoverflow.com/a/45970772
+import { setAngularJSGlobal, UpgradeModule } from '@angular/upgrade/static'; // import UpgradeModule -> https://stackoverflow.com/a/45970772
+import * as angular from './../app-angularjs/lib/angular'; // Import angular from angularjs -> https://stackoverflow.com/a/45970772
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-setAngularJSGlobal(angular);1st
+setAngularJSGlobal(angular); // Set angular globally
 
 const ngApp = angular.module('myApp', []);
 @NgModule({
