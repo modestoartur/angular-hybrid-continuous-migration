@@ -14,13 +14,14 @@ Migrating large enterprise angular js codebases to angular
 
 ## 1st - Prepare
 
-- Follow the upgrade guide that can help us in the way
-- Prepare component-based archtecture what can be a little hard when we have alot of hierarchical $scopes
+- Check the [update guide](https://update.angular.io/) from Angular
+- Prepare component-based architecture what can be a little hard when we have alot of hierarchical $scopes
 
 ## 2nd - Go Hybrid
 
-- Buttom Up - Not the best one, still possible.
-- Top Down - Mostly used
+- Buttom Up Way: Not the best one, but still possible we start from childs to parents
+
+- Top Down Way: Mostly used, we start from parent to childs
 
 ## 3th - Continuous Migration
 
